@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 app.use(cors()); // Enable Cross-Origin Resource Sharing
@@ -26,15 +25,7 @@ app.get('/results', (req, res) => {
     res.json(pollData);
 });
 
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Fallback route to serve index.html for undefined routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Declare constant port
+// Declare port number
 const PORT = 3000;
 
 // Start the server
