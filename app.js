@@ -40,7 +40,7 @@ function fetchResults() {
             <p>JavaScript: ${data.JavaScript}</p>
             <p>Python: ${data.Python}</p>
             <p>Java: ${data.Java}</p>
-            <p>C++: ${data.C++}</p>
+            <p>C: ${data.C}</p>
         `;
     })
     .catch(error => {

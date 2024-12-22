@@ -7,7 +7,7 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(bodyParser.json()); // Parse JSON requests
 
 // Poll data
-let pollData = { JavaScript: 0, Python: 0, Java: 0, Other: 0 };
+let pollData = { JavaScript: 0, Python: 0, Java: 0, C: 0 };
 
 // Endpoint to submit a vote
 app.post('/vote', (req, res) => {
