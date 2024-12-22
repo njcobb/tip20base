@@ -1,5 +1,3 @@
-// Vincent Test Commit
-
 document.getElementById('voteForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Prevent the form from submitting the traditional way
 
@@ -42,7 +40,7 @@ function fetchResults() {
             <p>JavaScript: ${data.JavaScript}</p>
             <p>Python: ${data.Python}</p>
             <p>Java: ${data.Java}</p>
-            <p>Other: ${data.Other}</p>
+            <p>C++: ${data.C++}</p>
         `;
     })
     .catch(error => {
