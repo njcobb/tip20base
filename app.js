@@ -1,3 +1,5 @@
+// Vincent Test Commit
+
 document.getElementById('voteForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Prevent the form from submitting the traditional way
 
