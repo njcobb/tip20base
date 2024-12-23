@@ -3,7 +3,7 @@ body {
     font-family: Georgia, serif;    /* Set font */
     margin: 0;                      /* Set webpage margins */
 
-    display: flex;                  /* Enable layout capabilities (alignment, spacing, etc.)
+    display: flex;                  /* Enable layout capabilities (alignment, spacing, etc.) */
     flex-direction: column;         /* Define axis in which flex items are laid out */
 
     align-items: center;            /* Centers content horizontally */
