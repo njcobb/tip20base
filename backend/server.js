@@ -19,8 +19,11 @@ let pollData = { JavaScript: 0, Python: 0, Java: 0, C: 0 };
 // Endpoint to submit a vote
 app.post('/vote', (req, res) => {
     const choice = req.body.choice;                         // Holds user's choice
+    console.log('Received vote for:', choice);              // Log the received choice
+
     if (pollData[choice] !== undefined) {                   // If poll choice is not undefined
         pollData[choice]++;                                 // Increment count
+        console.log('Updated poll data:', pollData);        // Log the updated poll data
         res.json({ message: 'Vote recorded!' });            // Send success message
     } else {
         res.status(400).json({ error: 'Invalid choice' });  // Send error message
