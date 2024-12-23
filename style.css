@@ -1,5 +1,26 @@
 body {
-    background-color: #32CD32;
-    font-family: Georgia, serif;
-    margin: 20px;
+    background-color: #34C759;    /* Set background color */
+    font-family: Georgia, serif;    /* Set font */
+    margin: 0;                      /* Set webpage margins */
+
+    display: flex;                  /* Enable layout capabilities (alignment, spacing, etc.)
+    flex-direction: column;         /* Define axis in which flex items are laid out */
+
+    align-items: center;            /* Centers content horizontally */
+    justify-content: center;        /* Centers content vertically */
+    min-height: 100vh;              /* Ensures the body takes the full height of the viewport */
+}
+
+header {
+    text-align: center;
+}
+
+header .logo {
+    max-width: 150px;               /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;            /* Space between logo and title */
+}
+
+h1 {
+    color: #fff; /* Ensure the text is readable against the green background */
 }
