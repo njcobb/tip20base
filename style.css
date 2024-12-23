@@ -22,5 +22,5 @@ header .logo {
 }
 
 h1 {
-    color: #fff; /* Ensure the text is readable against the green background */
+    color: #fff;                  /* Change header color (white) */
 }
