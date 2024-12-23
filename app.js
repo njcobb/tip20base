@@ -1,4 +1,4 @@
-document.getElementById('voteForm').addEventListener('submit', function (e) {
+document.getElementById('pollForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Prevent the form from submitting the traditional way
 
     // Get the selected programming language (In quotations, used to be 'language' but is now 'vote')
