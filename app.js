@@ -1,3 +1,4 @@
+// Tracking fix - used 'pollForm' instead of 'voteForm'
 document.getElementById('pollForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Prevent the form from submitting the traditional way
 
