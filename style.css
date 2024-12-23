@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    text-align: center;
+    text-align: center;             /* Centers header text */
 }
 
 header .logo {
