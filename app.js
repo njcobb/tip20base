@@ -2,7 +2,7 @@ document.getElementById('voteForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Prevent the form from submitting the traditional way
 
     // Get the selected programming language
-    const selectedLanguage = document.querySelector('input[name="language"]:checked');
+    const selectedLanguage = document.querySelector('input[name="vote"]:checked');
     if (selectedLanguage) {
         const language = selectedLanguage.value;
 
