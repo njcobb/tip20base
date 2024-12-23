@@ -1,7 +1,7 @@
 body {
     background-color: #34C759;    /* Set background color */
     font-family: Georgia, serif;    /* Set font */
-    margin: 100px;                  /* Set webpage margins */
+    margin: 50px;                  /* Set webpage margins */
 
     display: flex;                  /* Enable layout capabilities (alignment, spacing, etc.) */
     flex-direction: column;         /* Define axis in which flex items are laid out */
@@ -16,7 +16,7 @@ header {
 }
 
 header .logo {
-    max-width: 450px;               /* Adjust size as needed */
+    max-width: 500px;               /* Adjust size as needed */
     height: auto;
     margin-bottom: 10px;            /* Space between logo and title */
 }
