@@ -7,7 +7,7 @@ body {
     flex-direction: column;         /* Define axis in which flex items are laid out */
 
     align-items: center;            /* Centers content horizontally */
-    justify-content: center;        /* Centers content vertically */
+    /* justify-content: center;        /* Centers content vertically */
     min-height: 100vh;              /* Ensures the body takes the full height of the viewport */
 }
 
