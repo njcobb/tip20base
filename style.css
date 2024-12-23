@@ -16,7 +16,7 @@ header {
 }
 
 header .logo {
-    max-width: 150px;               /* Adjust size as needed */
+    max-width: 450px;               /* Adjust size as needed */
     height: auto;
     margin-bottom: 10px;            /* Space between logo and title */
 }
