@@ -13,21 +13,43 @@ app.use(bodyParser.json());                     // Parse JSON requests
 // Serve static files from the root directory (where index.html, app.js, and style.css are)
 app.use(express.static(path.join(__dirname, '..')));  // Go one level up from 'Backend' folder
 
-// Poll data
-let pollData = { JavaScript: 0, Python: 0, Java: 0, C: 0 };
+// Poll data: Track responses for each question
+let pollData = {
+    // Survey question 1
+    q1: {
+        Always: 0,
+        SometimesGoodService: 0,
+        SometimesNiceRestaurant: 0,
+        RarelyExceptionalService: 0,
+        Never: 0,
+    },
+    // Survey question 2
+    q2: {
+        Absolutely: 0,
+        YesIncentive: 0,
+        SometimesWhereAt: 0,
+        NoRarelyTip: 0,
+    },
+    // Survey question 3
+    q3: {
+        YesSignUp: 0,
+        MaybeNeedInfo: 0,
+        MaybeRewards: 0,
+        NoNotAtAll: 0,
+    },
+};
 
-// Endpoint to submit a vote
-app.post('/vote', (req, res) => {
-    const choice = req.body.choice;                         // Holds user's choice
-    console.log('Received vote for:', choice);              // Log the received choice
+// Endpoint to submit poll responses
+app.post('/submit', (req, res) => {
+    const { q1, q2, q3 } = req.body;
 
-    if (pollData[choice] !== undefined) {                   // If poll choice is not undefined
-        pollData[choice]++;                                 // Increment count
-        console.log('Updated poll data:', pollData);        // Log the updated poll data
-        res.json({ message: 'Vote recorded!' });            // Send success message
-    } else {
-        res.status(400).json({ error: 'Invalid choice' });  // Send error message
-    }
+    if (q1 && pollData.q1[q1] !== undefined) pollData.q1[q1]++;
+    if (q2 && pollData.q2[q2] !== undefined) pollData.q2[q2]++;
+    if (q3 && pollData.q3[q3] !== undefined) pollData.q3[q3]++;
+
+    console.log('Updated poll data:', pollData);
+
+    res.json({ message: 'Poll responses recorded successfully!' });
 });
 
 // Endpoint to fetch poll results
@@ -39,4 +61,6 @@ app.get('/results', (req, res) => {
 const PORT = 3000;
 
 // Start the server
-app.listen(PORT, () => console.log('Server running on http://localhost:3000'));
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
