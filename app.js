@@ -1,53 +1,51 @@
-// Tracking fix - used 'pollForm' instead of 'voteForm'
-document.getElementById('pollForm').addEventListener('submit', function (e) {
-    e.preventDefault();  // Prevent the form from submitting the traditional way
+document.getElementById('pollForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-    // Get the selected programming language (In quotations, used to be 'language' but is now 'vote')
-    const selectedLanguage = document.querySelector('input[name="vote"]:checked');
-    if (selectedLanguage) {
-        const language = selectedLanguage.value;
+    // Collect user responses
+    const formData = new FormData(e.target);
+    const data = {
+        q1: formData.get('q1'),
+        q2: formData.get('q2'),
+        q3: formData.get('q3'),
+    };
 
-        // Send the vote to the back-end server (POST request)
-        fetch('http://localhost:3000/vote', {
+    // Send the data to the backend
+    try {
+        const response = await fetch('http://localhost:3000/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ choice: language }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Log the server's response (success or error message)
-            console.log(data.message);
-
-            // Fetch updated poll results
-            fetchResults();
-        })
-        .catch(error => {
-            console.error('Error submitting vote:', error);
+            body: JSON.stringify(data),
         });
-    } else {
-        alert('Please select a programming language to vote for!');
+
+        const result = await response.json();
+        console.log(result.message);
+
+        // Fetch updated poll results
+        fetchResults();
+    } catch (error) {
+        console.error('Error submitting poll:', error);
     }
 });
 
-// Function to fetch poll results (GET request)
+// Function to fetch poll results
 function fetchResults() {
     fetch('http://localhost:3000/results')
-    .then(response => response.json())
-    .then(data => {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = `
-            <p>JavaScript: ${data.JavaScript}</p>
-            <p>Python: ${data.Python}</p>
-            <p>Java: ${data.Java}</p>
-            <p>C: ${data.C}</p>
-        `;
-    })
-    .catch(error => {
-        console.error('Error fetching results:', error);
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <h2>Poll Results:</h2>
+                <p>Question 1: ${JSON.stringify(data.q1, null, 2)}</p>
+                <p>Question 2: ${JSON.stringify(data.q2, null, 2)}</p>
+                <p>Question 3: ${JSON.stringify(data.q3, null, 2)}</p>
+            `;
+        })
+        .catch((error) => console.error('Error fetching results:', error));
 }
 
 // Fetch initial results on page load
 fetchResults();
+
