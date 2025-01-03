@@ -1,7 +1,7 @@
 body {
     background-color: #34C759;    /* Set background color */
     font-family: Georgia, serif;    /* Set font */
-    margin: 50px;                  /* Set webpage margins */
+    margin: 50px;                   /* Set webpage margins */
 
     display: flex;                  /* Enable layout capabilities (alignment, spacing, etc.) */
     flex-direction: column;         /* Define axis in which flex items are laid out */
