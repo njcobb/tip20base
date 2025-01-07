@@ -11,7 +11,7 @@ document.getElementById('pollForm').addEventListener('submit', async function (e
 
     // Send the data to the backend
     try {
-        const response = await fetch('http://localhost:3000/submit', {
+        const response = await fetch('http://3.135.228.238/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ document.getElementById('pollForm').addEventListener('submit', async function (e
 
 // Function to fetch poll results
 function fetchResults() {
-    fetch('http://localhost:3000/results')
+    fetch('http://3.135.228.238/results')
         .then((response) => response.json())
         .then((data) => {
             const resultsDiv = document.getElementById('results');
