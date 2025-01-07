@@ -24,6 +24,9 @@ document.getElementById('pollForm').addEventListener('submit', async function (e
 
         // Fetch updated poll results
         fetchResults();
+
+        // Redirect to the 'Thank You' page
+        window.location.href = 'thankyou.html';
     } catch (error) {
         console.error('Error submitting poll:', error);
     }
