@@ -12,7 +12,7 @@ document.getElementById('pollForm').addEventListener('submit', async function (e
     }
   
     try {
-      const response = await fetch('/submit', {
+      const response = await fetch('http://localhost:80/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ q1, q2, q3 }),
