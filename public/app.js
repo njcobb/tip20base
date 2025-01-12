@@ -22,7 +22,7 @@ document.getElementById('pollForm').addEventListener('submit', async function (e
       alert(result.message);
   
       // Fetch and display updated results
-      const results = await fetch('/results');
+      const results = await fetch('/http://localhost:80/results');
       const pollData = await results.json();
       document.getElementById('results').textContent = JSON.stringify(pollData, null, 2);
     } catch (err) {
