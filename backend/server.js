@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 // Poll submission route
-app.post('/submit', (req, res) => {
+app.post('/vote', (req, res) => {
     const { q1, q2, q3 } = req.body;
     if (q1 && pollData.q1[q1] !== undefined) pollData.q1[q1]++;
     if (q2 && pollData.q2[q2] !== undefined) pollData.q2[q2]++;
