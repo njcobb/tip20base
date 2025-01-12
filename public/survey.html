@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="images/Tip20Logo.svg" alt="Website Logo" class="logo">
+        <h1>Thank you for your interest in Tip20! Currently, 
+            this application is in Beta, but please fill out the short questionnaire below. 
+            Happy tipping!</h1>
+    </header>
+    <section>
+        <form id="pollForm">
+            <!-- Question 1 -->
+            <p>1. When prompted, how often do you tip 20% or more?</p>
+            <label>
+                <input type="radio" name="q1" value="Always"> Always
+            </label><br>
+            <label>
+                <input type="radio" name="q1" value="SometimesGoodService"> Sometimes, if I get good service
+            </label><br>
+            <label>
+                <input type="radio" name="q1" value="SometimesNiceRestaurant"> Sometimes, if I am at a nice restaurant
+            </label><br>
+            <label>
+                <input type="radio" name="q1" value="RarelyExceptionalService"> Rarely, only when I get exceptional service
+            </label><br>
+            <label>
+                <input type="radio" name="q1" value="Never"> Never
+            </label><br><br>
+
+            <!-- Question 2 -->
+            <p>2. If you were given an incentive, would you be more likely to tip 20%?</p>
+            <label>
+                <input type="radio" name="q2" value="Absolutely"> Absolutely!
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="YesIncentive"> Yes, depending on the incentive
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="SometimesWhereAt"> Sometimes, depending on where I’m at
+            </label><br>
+            <label>
+                <input type="radio" name="q2" value="NoRarelyTip"> No, I rarely tip 20%
+            </label><br><br>
+
+            <!-- Question 3 -->
+            <p>3. Would you download an app that offers rewards at various places when you tip 20%?</p>
+            <label>
+                <input type="radio" name="q3" value="YesSignUp"> Yes! Where can I sign up?
+            </label><br>
+            <label>
+                <input type="radio" name="q3" value="MaybeNeedInfo"> Maybe, I’d need more information
+            </label><br>
+            <label>
+                <input type="radio" name="q3" value="MaybeRewards"> Maybe, it depends on how good the rewards are
+            </label><br>
+            <label>
+                <input type="radio" name="q3" value="NoNotAtAll"> No, not at all
+            </label><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results" style="display:none;">
+            <h2>Poll Results</h2>
+            <ul id="resultsList"></ul>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
+
