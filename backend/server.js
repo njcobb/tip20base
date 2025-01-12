@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 // Poll submission route
-app.post('/vote', (req, res) => {
+app.post('/submit', (req, res) => {
     const { q1, q2, q3 } = req.body;
     if (q1 && pollData.q1[q1] !== undefined) pollData.q1[q1]++;
     if (q2 && pollData.q2[q2] !== undefined) pollData.q2[q2]++;
@@ -38,5 +38,5 @@ AWS_IP_ADDR = "3.135.228.238"
 
 // Start the server
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on http://${AWS_IP_ADDR}:${PORT}`);
+    console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
